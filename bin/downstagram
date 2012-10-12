@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+
+var Downstagram = require('../lib/downstagram');
+var ds = new Downstagram();
+ds.start();
