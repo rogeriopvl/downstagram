@@ -1,6 +1,6 @@
 {
     "name": "downstagram",
-    "description": "Command line tool to download and backup all you instagram photos",
+    "description": "Command line tool to download and backup all your instagram photos",
     "author": "Rogério Vicente <rogeriopvl@gmail.com>",
     "keywords": ["downstagram", "instagram", "cli"],
     "maintainers":[
