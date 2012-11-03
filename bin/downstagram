@@ -1,5 +1,12 @@
 #!/usr/bin/env node
 
 var Downstagram = require('../lib/downstagram');
-var ds = new Downstagram();
+
+if (process.argv.length < 3){
+    console.log('Error: No username specified');
+    console.log('Usage: downstagram <username>');
+    process.exit(-1);
+}
+
+var ds = new Downstagram(process.argv.pop());
 ds.start();
