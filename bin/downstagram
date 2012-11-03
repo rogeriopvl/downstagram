@@ -2,11 +2,28 @@
 
 var Downstagram = require('../lib/downstagram');
 
-if (process.argv.length < 3){
-    console.log('Error: No username specified');
+function showHelp(){
     console.log('Usage: downstagram <username>');
-    process.exit(-1);
 }
 
-var ds = new Downstagram(process.argv.pop());
-ds.start();
+function showVersion(){
+    console.log('Version 0.0.1');
+}
+
+var args = process.argv;
+args.splice(0, 2);
+
+var username = args.shift();
+
+if (typeof username === 'undefined' || !username || username == '-h' || username == '--help'){
+    showHelp();
+    process.exit(0);
+}
+else if (username == '-v' || username == '--version'){
+    showVersion();
+    process.exit(0);
+}
+else {
+    var ds = new Downstagram(username);
+    ds.start();
+}
