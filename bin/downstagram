@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var Downstagram = require('../lib/downstagram');
-var version = "0.0.1";
+var version = "0.0.3";
 
 function showHelp(){
     console.log('Usage: downstagram <username>');

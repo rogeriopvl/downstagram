@@ -6,7 +6,7 @@
     "maintainers":[
         {"name": "Rogério Vicente", "web": "http://rogeriopvl.com"}
     ],
-    "version": "0.0.1",
+    "version": "0.0.3",
     "repository": {
         "type": "git",
         "url": "https://github.com/rogeriopvl/downstagram"
@@ -25,7 +25,7 @@
         "downstagram": "./bin/downstagram"
     },
     "scripts": {
-        "install": "./downstagram/lib/install.js"
+        "install": "./lib/install.js"
     },
     "licenses": [
         {
