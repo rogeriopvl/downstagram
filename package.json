@@ -19,13 +19,13 @@
         "node": ">=0.8.0"
     },
     "directories": {
-        "lib": "./lib",
+        "lib": "./lib"
     },
     "bin": {
         "downstagram": "./bin/downstagram"
     },
     "scripts": {
-        "install": "./downstagram/lib/install"
+        "install": "./downstagram/lib/install.js"
     },
     "licenses": [
         {
