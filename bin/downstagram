@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+var Downstagram = require('../lib/downstagram');
+var version = "0.0.1";
+
+function showHelp(){
+    console.log('Usage: downstagram <username>');
+}
+
+function showVersion(){
+    console.log('Version ' + version);
+}
+
+var args = process.argv;
+args.splice(0, 2);
+
+var username = args.shift();
+
+if (typeof username === 'undefined' || !username || username == '-h' || username == '--help'){
+    showHelp();
+    process.exit(0);
+}
+else if (username == '-v' || username == '--version'){
+    showVersion();
+    process.exit(0);
+}
+else {
+    var ds = new Downstagram(username);
+    ds.start();
+}

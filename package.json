@@ -1,0 +1,36 @@
+{
+    "name": "downstagram",
+    "description": "Command line tool to download and backup all you instagram photos",
+    "author": "Rogério Vicente <rogeriopvl@gmail.com>",
+    "keywords": ["downstagram", "instagram", "cli"],
+    "maintainers":[
+        {"name": "Rogério Vicente", "web": "http://rogeriopvl.com"}
+    ],
+    "version": "0.0.1",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rogeriopvl/downstagram"
+    },
+    "dependencies": {
+        "colors": ">=0.6.0",
+        "instagram-node-lib": ">=0.1.0"
+    },
+    "engines": {
+        "node": ">=0.8.0"
+    },
+    "directories": {
+        "lib": "./lib",
+    },
+    "bin": {
+        "downstagram": "./bin/downstagram"
+    },
+    "scripts": {
+        "install": "./downstagram/lib/install"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://github.com/rogeriopvl/downstagram/LICENSE"
+        }
+    ]
+}
