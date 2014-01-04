@@ -4,7 +4,7 @@ var Downstagram = require('../lib/downstagram');
 var version = "0.1.1";
 
 function showHelp(){
-    console.log('Usage: downstagram <username>');
+    console.log('Usage: downstagram [-m|--metadata] <username>');
 }
 
 function showVersion(){
@@ -14,17 +14,23 @@ function showVersion(){
 var args = process.argv;
 args.splice(0, 2);
 
-var username = args.shift();
+var keepMetadata = false;
 
-if (typeof username === 'undefined' || !username || username == '-h' || username == '--help'){
-    showHelp();
-    process.exit(0);
+while (arg = args.shift()) {
+  if (typeof arg === 'undefined' || !arg || arg == '-h' || arg == '--help'){
+      showHelp();
+      process.exit(0);
+  }
+  else if (arg == '-v' || arg == '--version'){
+      showVersion();
+      process.exit(0);
+  }
+  else if (arg == '-m' || arg == '--metadata'){
+      keepMetadata = true;
+  } else {
+    username = arg;
+  }
 }
-else if (username == '-v' || username == '--version'){
-    showVersion();
-    process.exit(0);
-}
-else {
-    var ds = new Downstagram(username);
-    ds.start();
-}
+
+var ds = new Downstagram(username, keepMetadata);
+ds.start();
