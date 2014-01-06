@@ -15,8 +15,9 @@ var args = process.argv;
 args.splice(0, 2);
 
 var keepMetadata = false;
+var arg = args.shift();
 
-while (arg = args.shift()) {
+do {
   if (typeof arg === 'undefined' || !arg || arg == '-h' || arg == '--help'){
       showHelp();
       process.exit(0);
@@ -30,7 +31,7 @@ while (arg = args.shift()) {
   } else {
     username = arg;
   }
-}
+} while (arg = args.shift());
 
 var ds = new Downstagram(username, keepMetadata);
 ds.start();
