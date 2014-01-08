@@ -4,9 +4,12 @@
     "author": "Rogério Vicente <rogeriopvl@gmail.com>",
     "keywords": ["downstagram", "instagram", "cli"],
     "maintainers":[
-        {"name": "Rogério Vicente", "web": "http://rogeriopvl.com"}
+        {"name": "Rogério Vicente", "url": "http://github.com/rogeriopvl"}
     ],
-    "version": "0.1.1",
+    "contributors": [
+        {"name": "Ryan Duryea", "url": "https://github.com/aguynamedryan"}
+    ],
+    "version": "0.2.0",
     "repository": {
         "type": "git",
         "url": "https://github.com/rogeriopvl/downstagram"
