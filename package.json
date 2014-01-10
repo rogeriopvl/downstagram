@@ -25,8 +25,8 @@
     "url": "https://github.com/rogeriopvl/downstagram"
   },
   "dependencies": {
-    "colors": ">=0.6.0",
-    "instagram-node-lib": ">=0.1.0"
+    "instagram-node-lib": "~0.1.1",
+    "pace": "~0.0.4"
   },
   "engines": {
     "node": ">=0.8.0"

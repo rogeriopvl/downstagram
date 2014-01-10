@@ -18,15 +18,19 @@ var username;
 var keepMetadata = false;
 var first = args.shift();
 
-if (first === '-v' || first === '--version') {
-    showVersion();
-    process.exit(0);
-} else if ((first === '-m' || first === 'metadata') && args.length > 0) {
-    keepMetadata = true;
-    username = args.shift();
+if (first.indexOf('-') === 0) {
+    if (first === '-v' || first === '--version') {
+        showVersion();
+        process.exit(0);
+    } else if ((first === '-m' || first === 'metadata') && args.length > 0) {
+        keepMetadata = true;
+        username = args.shift();
+    } else {
+        showHelp();
+        process.exit(first === '-v' || first === '-help' ? 0 : 1);
+    }
 } else {
-    showHelp();
-    process.exit(first === '-v' || first === '-help' ? 0 : 1);
+    username = first;
 }
 
 var ds = new Downstagram(username, keepMetadata);
