@@ -14,24 +14,20 @@ function showVersion(){
 var args = process.argv;
 args.splice(0, 2);
 
+var username;
 var keepMetadata = false;
-var arg = args.shift();
+var first = args.shift();
 
-do {
-  if (typeof arg === 'undefined' || !arg || arg == '-h' || arg == '--help'){
-      showHelp();
-      process.exit(0);
-  }
-  else if (arg == '-v' || arg == '--version'){
-      showVersion();
-      process.exit(0);
-  }
-  else if (arg == '-m' || arg == '--metadata'){
-      keepMetadata = true;
-  } else {
-    username = arg;
-  }
-} while (arg = args.shift());
+if (first === '-v' || first === '--version') {
+    showVersion();
+    process.exit(0);
+} else if ((first === '-m' || first === 'metadata') && args.length > 0) {
+    keepMetadata = true;
+    username = args.shift();
+} else {
+    showHelp();
+    process.exit(first === '-v' || first === '-help' ? 0 : 1);
+}
 
 var ds = new Downstagram(username, keepMetadata);
 ds.start();
