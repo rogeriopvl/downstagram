@@ -26,7 +26,8 @@
   },
   "dependencies": {
     "instagram-node-lib": "~0.1.1",
-    "pace": "~0.0.4"
+    "pace": "~0.0.4",
+    "openurl": "~1.1.0"
   },
   "engines": {
     "node": ">=0.8.0"
