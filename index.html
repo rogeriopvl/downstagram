@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Downstagram</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+        .big-text {
+            font-size: 3em;
+        }
+    </style>
+</head>
+<body>
+<h1 class="center">Downstagram - Setup Page</h1>
+    <div id="default-content" class="center">
+        <p>Please run downstagram for the first time, to enable the OAuth setup on this page</p>
+    </div>
+    <div id="setup-content" class="center hidden">
+        <p>You access token is: <span class="big-text" id="token-placeholder"></span></p>
+        <p>Go back to your terminal and insert this token into the prompt.</p>
+    </div>
+    <script type="text/javascript">
+        if (document.location.hash && document.location.hash.indexOf('access_token')) {
+            var token = document.location.hash.split('=').pop();
+            document.getElementById('token-placeholder').innerHTML = token;
+            document.getElementById('setup-content').style.display = 'block';
+            document.getElementById('default-content').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

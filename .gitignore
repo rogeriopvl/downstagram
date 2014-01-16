@@ -1,0 +1,9 @@
+.DS_Store
+node_modules
+photos/
+Gulpfile.js
+LICENSE
+README.md
+bin/
+lib/
+package.json
