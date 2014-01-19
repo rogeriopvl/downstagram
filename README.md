@@ -42,6 +42,10 @@ Copy paste this URL into your browser and log in to Instagram. After this, Insta
 
     downstagram <username>
 
+## Development
+
+This project uses `master` branch for development. So if you want to hack on the code, it's suggested that start from a tag commit.
+
 ## License
 
 Copyright (c) 2012 Rogério Vicente
