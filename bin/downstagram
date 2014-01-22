@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 var Downstagram = require('../lib/downstagram');
-var version = "0.1.1";
+var version = require('../package.json').version;
+var config = require('../lib/config.js');
 
 function showHelp(){
     console.log('Usage: downstagram [-m|--metadata] <username>');
@@ -11,27 +12,31 @@ function showVersion(){
     console.log('Version ' + version);
 }
 
-var args = process.argv;
-args.splice(0, 2);
-
-var username;
-var keepMetadata = false;
-var first = args.shift();
-
-if (first.indexOf('-') === 0) {
-    if (first === '-v' || first === '--version') {
-        showVersion();
-        process.exit(0);
-    } else if ((first === '-m' || first === 'metadata') && args.length > 0) {
-        keepMetadata = true;
-        username = args.shift();
-    } else {
-        showHelp();
-        process.exit(first === '-v' || first === '-help' ? 0 : 1);
-    }
+if (!config.auth.access_token) {
+    require('../lib/setup.js')();
 } else {
-    username = first;
-}
+    var args = process.argv;
+    args.splice(0, 2);
 
-var ds = new Downstagram(username, keepMetadata);
-ds.start();
+    var username;
+    var keepMetadata = false;
+    var first = args.shift();
+
+    if (first.indexOf('-') === 0) {
+        if (first === '-v' || first === '--version') {
+            showVersion();
+            process.exit(0);
+        } else if ((first === '-m' || first === 'metadata') && args.length > 0) {
+            keepMetadata = true;
+            username = args.shift();
+        } else {
+            showHelp();
+            process.exit(first === '-v' || first === '-help' ? 0 : 1);
+        }
+    } else {
+        username = first;
+    }
+
+    var ds = new Downstagram(username, keepMetadata);
+    ds.start();
+}

@@ -39,7 +39,7 @@
     "downstagram": "./bin/downstagram"
   },
   "scripts": {
-    "install": "./lib/install.js"
+    "test": ""
   },
   "licenses": [
     {
