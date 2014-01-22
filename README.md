@@ -12,7 +12,7 @@ Downstagram is a simple command line tool to download and backup all your [Insta
 
 After installation, Downstagram creates a configuration file in your home directory:
 
-    ~/.downstagram
+    ~/.downstagramrc
 
 The file has the following fields and structure:
 
