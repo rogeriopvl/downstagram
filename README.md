@@ -8,7 +8,7 @@ Downstagram is a simple command line tool to download and backup all your [Insta
 
     npm install -g downstagram
 
-## Configure
+## First run / OAuth Setup
 
 After installation, Downstagram creates a configuration file in your home directory:
 
@@ -18,29 +18,24 @@ The file has the following fields and structure:
 
     {
         "auth": {
-            "client_id": "INSERT_HERE",
-            "client_secret": "INSERT_HERE",
-            "access_token": "INSERT_HERE"
+            "client_id": "xxx",
+            "client_secret": "xxx",
+            "access_token": "<will be set after oauth setup>"
         }
     }
 
-You must change this files with your own values or Downstagram won't work.
+On the first run, Downstagram runs the OAuth setup. The browser will open up with Instagram's authorization page. Just accept the authorization request and copy paste the resulting access token into the terminal window.
 
-### How do I get these values?
+After this step, Downstagram is ready to backup your photos. Just run the command with your username and it's done.
 
-To get the values asked in the config file, you need to go to the [Instagram developers page][1] and register a new application. All steps are explained in the website. This will get you the `cliend_id` and the `client_secret` values.
-
-To get the access token you need to build the follwing URL:
-
-    https://instagram.com/oauth/authorize/?client_id=<CLIENT_ID>&redirect_uri=<ANY_URL>&response_type=token
-
-Place your `client_id` in the URL, and a URL to any website (i.e http://google.com).
-
-Copy paste this URL into your browser and log in to Instagram. After this, Instagram will redirect you to the URL you specified, with the access token appended. Copy the token and paste it into your configuration file. And (finally!) you're done.
 
 ### Usage
 
-    downstagram <username>
+    downstagram [-m] <username>
+
+        -m | --metadata     (optional) Also download a json file with all photo's metadata
+        -v | --version      show Downstagram's version
+        -h | --help         show help info
 
 ## Development
 
@@ -57,4 +52,3 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 [0]: http://instagram.com
-[1]: http://instagram.com/developers
