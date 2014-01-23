@@ -3,29 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Downstagram</title>
-    <style>
-        .center {
-            text-align: center;
-        }
-        .hidden {
-            display: none;
-        }
-        .big-text {
-            font-size: 3em;
-        }
-    </style>
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body>
-<h1 class="center">Downstagram - Setup Page</h1>
-    <div id="default-content" class="center">
-        <p>Please run downstagram for the first time, to enable the OAuth setup on this page</p>
-    </div>
-    <div id="setup-content" class="center hidden">
-        <p>You access token is: <span class="big-text" id="token-placeholder"></span></p>
-        <p>Go back to your terminal and insert this token into the prompt.</p>
+    <div id="container">
+        <h1>Downstagram</h1>
+        <h2>Setup Page</h2>
+        <div id="default-content">
+            <p>Please run <a href="http://github.com/rogeriopvl/downstagram">downstagram</a> for the first time to enable the OAuth setup on this page.</p>
+        </div>
+        <div id="setup-content" class="hidden">
+            <p class="lolcatz">Your access token is: </p>
+            <p class="big-text" id="token-placeholder"></p>
+            <p>Go back to your terminal and insert this token into the prompt.</p>
+        </div>
     </div>
     <script type="text/javascript">
-        if (document.location.hash && document.location.hash.indexOf('access_token')) {
+        if (document.location.hash && document.location.hash.indexOf('access_token') !== -1) {
             var token = document.location.hash.split('=').pop();
             document.getElementById('token-placeholder').innerHTML = token;
             document.getElementById('setup-content').style.display = 'block';
