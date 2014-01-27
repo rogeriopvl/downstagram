@@ -1,6 +1,6 @@
 {
   "name": "downstagram",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Command line tool to download and backup all your instagram photos",
   "author": "Rogério Vicente <rogeriopvl@gmail.com>",
   "keywords": [
