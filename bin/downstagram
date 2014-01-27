@@ -22,6 +22,11 @@ if (!config.auth.access_token) {
     var keepMetadata = false;
     var first = args.shift();
 
+    if (!first) {
+        showHelp();
+        process.exit(0);
+    }
+
     if (first.indexOf('-') === 0) {
         if (first === '-v' || first === '--version') {
             showVersion();
