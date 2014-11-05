@@ -31,12 +31,12 @@ if (!config.auth.access_token) {
         if (first === '-v' || first === '--version') {
             showVersion();
             process.exit(0);
-        } else if ((first === '-m' || first === 'metadata') && args.length > 0) {
+        } else if ((first === '-m' || first === '--metadata') && args.length > 0) {
             keepMetadata = true;
             username = args.shift();
         } else {
             showHelp();
-            process.exit(first === '-v' || first === '-help' ? 0 : 1);
+            process.exit(first === '-h' || first === '--help' ? 0 : 1);
         }
     } else {
         username = first;
