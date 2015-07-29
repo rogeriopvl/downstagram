@@ -43,11 +43,13 @@
     "downstagram": "./bin/downstagram"
   },
   "scripts": {
-    "test": "node test"
+    "test": "node test",
+    "lint": "jshint index.js lib/* test/*"
   },
   "license": "MIT",
   "devDependencies": {
     "concat-stream": "^1.5.0",
+    "jshint": "^2.8.0",
     "tape": "^4.0.1"
   }
 }
