@@ -1,4 +1,5 @@
 var config = require('./lib/config.js');
+var setup = require('./lib/setup');
 var pkg = require('./package.json');
 var Downstagram = require('./lib/downstagram.js');
 var pace = require('pace');
@@ -10,7 +11,7 @@ module.exports = function (argv) {
     showVersion();
   } else if (argv._.length === 1) {
     if (!config.get('access_token')) {
-      require('./lib/setup')(config.get('client_id'), function (err, token) {
+      setup(config.get('client_id'), function (err, token) {
         config.set('access_token', token);
         run();
       });
@@ -28,12 +29,17 @@ module.exports = function (argv) {
     var d = new Downstagram(argv._[0], { keepMetadata: argv.metadata });
     d.start();
 
-    d.addListener('total', function (num) {
+    d.on('start', function (num) {
       progressBar = pace(num);
     });
 
-    d.addListener('fetched', function () {
+    d.on('fetched', function () {
       progressBar.op();
+    });
+
+    d.on('error', function (err) {
+      console.log(err);
+      process.exit(1);
     });
   }
 };
@@ -43,5 +49,5 @@ function showHelp() {
 }
 
 function showVersion() {
-    console.log('Downstagram v' + pkg.version);
+  console.log('Downstagram v' + pkg.version);
 }

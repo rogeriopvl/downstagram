@@ -17,19 +17,21 @@ var runBin = function (params, cb) {
   }));
 };
 
-test('calling with no arguments returns usage and error status code', function (t) {
-  t.plan(2);
-  runBin([], function (err, output, code) {
-    t.ok(output.indexOf('Usage:') !== -1);
-    t.notEquals(code, 0);
+test('spawning the bin', function (t) {
+  t.test('calling with no arguments returns usage and error status code', function (t) {
+    t.plan(2);
+    runBin([], function (err, output, code) {
+      t.ok(output.indexOf('Usage:') !== -1);
+      t.notEquals(code, 0);
+    });
   });
-});
 
-test('calling with --version returns version and 0 status code', function (t) {
-  t.plan(2);
-  runBin(['--version'], function (err, output, code) {
-    var expected = 'Downstagram v' + require('../package.json').version + '\n';
-    t.equals(output, expected);
-    t.equals(code, 0);
+  t.test('calling with --version returns version and 0 status code', function (t) {
+    t.plan(2);
+    runBin(['--version'], function (err, output, code) {
+      var expected = 'Downstagram v' + require('../package.json').version + '\n';
+      t.equals(output, expected);
+      t.equals(code, 0);
+    });
   });
 });
