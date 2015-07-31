@@ -3,6 +3,7 @@ var argv = require('minimist')(process.argv.slice(2), {
   boolean: ['metadata', 'version', 'help'],
   alias: {
     'm': 'metadata',
+    'o': 'output',
     'v': 'version',
     'h': 'help'
   }
