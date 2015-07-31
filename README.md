@@ -1,4 +1,4 @@
-# Downstragram
+# Downstragram [![Build Status](https://travis-ci.org/rogeriopvl/downstagram.svg?branch=master)](https://travis-ci.org/rogeriopvl/downstagram)
 
 ## About
 
@@ -31,9 +31,10 @@ After this step, Downstagram is ready to backup your photos. Just run the comman
 
 ### Usage
 
-    downstagram [-m] <username>
+    downstagram [-m| --metadata] [-o| --output] <username>
 
-        -m | --metadata     (optional) Also download a json file with all photo's metadata
+        -o | --output <absolute-path>  (optional) Save media into a custom path (instead of the current dir)
+        -m | --metadata                (optional) Also download a json file with all photo's metadata
         -v | --version      show Downstagram's version
         -h | --help         show help info
 
