@@ -43,7 +43,7 @@
     "downstagram": "./bin/downstagram"
   },
   "scripts": {
-    "test": "node test",
+    "test": "tape test/*.js",
     "lint": "jshint index.js lib/* test/*"
   },
   "license": "MIT",
