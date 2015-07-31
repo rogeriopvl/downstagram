@@ -34,7 +34,7 @@
     "request": "^2.60.0"
   },
   "engines": {
-    "node": ">=0.8.0"
+    "node": ">=0.10.0"
   },
   "directories": {
     "lib": "./lib"
