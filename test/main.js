@@ -18,11 +18,12 @@ test('downstagram module', function (t) {
     t.equals(typeof d.start, 'function');
   });
 
-  t.test('events start and fetched emitted', function (t) {
-    t.plan(3);
+  t.test('events start, fetched and end are emitted', function (t) {
+    t.plan(4);
     var d = new Downstagram('rogeriopvl', {});
     d.on('start', function (num) { t.equals(num, 2); });
-    d.on('fetched', function () { t.pass(); });
+    d.on('fetched', function (remaining) { t.pass(); });
+    d.on('end', function () { t.pass(); });
     d.start();
   });
 
