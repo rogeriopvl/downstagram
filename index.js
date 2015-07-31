@@ -48,7 +48,10 @@ module.exports = function (argv) {
 };
 
 function showHelp() {
-  console.log('Usage: downstagram [-m|--metadata] <username>');
+  console.log('Usage: downstagram [-m|--metadata] [-o|--output] <username>');
+  console.log('Options:')
+  console.log('  --metadata:      for every media file also create a metadata json file');
+  console.log('  --output <path>: define a custom path where the photos will be saved');
 }
 
 function showVersion() {

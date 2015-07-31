@@ -14,7 +14,7 @@ test('downstagram module', function (t) {
 
   var Downstagram = require('../lib/downstagram.js');
 
-  mockFS({ 'media-mock.jpg': 'just a media file mock' });
+  mockFS({ 'media-mock.jpg': 'just a media file mock', '/tmp': {} });
 
   t.test('instance has start method', function (t) {
     t.plan(1);
@@ -75,6 +75,19 @@ test('downstagram module', function (t) {
       t.ok(fs.existsSync(path.join(expectedFolderName, '1438270899.mp4')));
       t.ok(fs.existsSync(path.join(expectedFolderName, '1438270800.json')));
       t.ok(fs.existsSync(path.join(expectedFolderName, '1438270899.json')));
+    });
+    d.start();
+  });
+
+  t.test('when passing --output saves files in the custom dir', function (t) {
+    t.plan(3);
+    var expectedFolderPath = path.join('/tmp', 'rogeriopvl_instagram_photos');
+
+    var d = new Downstagram('rogeriopvl', { output: '/tmp' });
+    d.on('end', function () {
+      t.ok(fs.existsSync(expectedFolderPath));
+      t.ok(fs.existsSync(path.join(expectedFolderPath, '1438270800.jpg')));
+      t.ok(fs.existsSync(path.join(expectedFolderPath, '1438270899.mp4')));
     });
     d.start();
   });
