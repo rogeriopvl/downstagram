@@ -1,8 +1,8 @@
-# Downstragram [![Build Status](https://travis-ci.org/rogeriopvl/downstagram.svg?branch=master)](https://travis-ci.org/rogeriopvl/downstagram)
+# Downstagram [![Build Status](https://travis-ci.org/rogeriopvl/downstagram.svg?branch=master)](https://travis-ci.org/rogeriopvl/downstagram)
 
 ## About
 
-Downstagram is a simple command line tool to download and backup all your [Instagram][0] photos.
+Downstagram is a simple command line tool to download and backup all your [Instagram][0] photos and videos.
 
 ## Install
 
