@@ -27,7 +27,7 @@ module.exports = function (argv) {
 
   function run() {
     var d = new Downstagram(argv._[0], {
-      keepMetadata: argv.metadata,
+      metadata: argv.metadata,
       output: argv.output
     });
     d.start();

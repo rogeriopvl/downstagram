@@ -23,14 +23,14 @@ var userRecentResponseOK = [
     type: 'image' ,
     created_time: '1438270800',
     images: {
-      standard_resolution: { url: 'http://rogeriopvl.com/images/bg.png' }
+      standard_resolution: { url: 'http://foobar.image' }
     }
   },
   {
     type: 'video' ,
     created_time: '1438270899',
     videos: {
-      standard_resolution: { url: 'http://rogeriopvl.com/images/bg.png' }
+      standard_resolution: { url: 'http://foobar.video' }
     }
   }
 ];
