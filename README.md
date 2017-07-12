@@ -1,5 +1,7 @@
 # Downstagram [![Build Status](https://travis-ci.org/rogeriopvl/downstagram.svg?branch=master)](https://travis-ci.org/rogeriopvl/downstagram)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/rogeriopvl/downstagram.svg)](https://greenkeeper.io/)
+
 ## About
 
 Downstagram is a simple command line tool to download and backup all your [Instagram][0] photos and videos.
