@@ -50,7 +50,7 @@
   "devDependencies": {
     "concat-stream": "^1.6.0",
     "jshint": "^2.9.5",
-    "mock-fs": "^4.4.1",
+    "mock-fs": "^4.7.0",
     "mockery": "^2.1.0",
     "tape": "^4.7.0"
   }
