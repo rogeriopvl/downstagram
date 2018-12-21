@@ -48,7 +48,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "concat-stream": "^1.6.0",
+    "concat-stream": "^2.0.0",
     "jshint": "^2.9.5",
     "mock-fs": "^4.4.1",
     "mockery": "^2.1.0",
