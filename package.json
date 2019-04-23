@@ -29,7 +29,7 @@
     "inherits": "^2.0.3",
     "instagram-node-lib": "~0.1.1",
     "minimist": "^1.2.0",
-    "open": "~0.0.5",
+    "open": "~6.2.0",
     "pace": "~0.0.4",
     "request": "^2.81.0"
   },
